@@ -6,7 +6,7 @@ public class Mallet : MonoBehaviour
     Vector3 _move;
     Rigidbody _rb;
     float _time;
-    [SerializeField] float _maxforce = 10;
+    [SerializeField] float _maxforce = 5;
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
