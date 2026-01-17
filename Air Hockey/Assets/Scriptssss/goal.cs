@@ -10,7 +10,7 @@ public class goal : MonoBehaviour
     {
         if (other.CompareTag("puck"))
         {
-            Destroy(other.gameObject);
+           _puckPrefab.SetActive(false);
             Debug.Log("ゴール！");
             StartCoroutine(Restart());
         }
@@ -19,7 +19,7 @@ public class goal : MonoBehaviour
     IEnumerator Restart()
     {
         yield return new WaitForSeconds(3f);
-        Instantiate(_puckPrefab, _startPos, Quaternion.identity);
+        _puckPrefab.transform.position = _startPos;
         Debug.Log("リスタート");
     }
 }
